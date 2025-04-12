@@ -13,8 +13,8 @@ const Adventure = () => {
         <div className='md:flex md:flex-row md:justify-between md:items-left md:flex-wrap md:gap-5 md:w-full'>
             {
                 AdventureActivity.map((items) => (
-                <div className='py-5 px-[60px] flex flex-col items-center justify-center md:w-80 md:justify-self-start'>
-                    <img src={items.image} alt={items.title} />
+                <div key={items.id} className='py-5 px-[60px] flex flex-col items-center justify-center md:w-80 md:justify-self-start'>
+                    <img src={items.image} alt={items.title} className='w-[85px] aspect-auto'/>
                     <h3 className='my-[11px] text-white font-bold text-3xl font-playfair'>{items.title}</h3>
                     <p className='font-normal text-lg text-center'>{items.description}</p>
                 </div>

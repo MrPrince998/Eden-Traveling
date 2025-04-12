@@ -12,7 +12,7 @@ const HeroSection = () => {
           <p className='text-xl my-2 md:w-150'>If you're in search of exciting  adventures, unforgettable experiences, and breathtaking places to explore, you've come to the right place!</p>
         </div>
       </div>
-      <section className='bg-[#025951] text-white pt-10 pb-15 px-5 lg:bg-[rgba(0,0,0,0.7)] lg:w-full lg:px-34 md:gap-2 lg:backdrop-blur-sm lg:absolute lg:top-120'>
+      <section className='bg-[#025951] text-white pt-10 pb-15 px-5 lg:bg-[rgba(0,0,0,0.7)] lg:w-full lg:px-2 md:gap-2 lg:backdrop-blur-sm lg:absolute lg:top-120'>
         <h2 className='mb-5 font-bold text-2xl font-playfair text-center md:text-[40px]'>Plan your travel now</h2>
         <div>
           <form className='flex flex-col gap-4 mx-5 lg:grid lg:grid-cols-5 lg:gap-5 lg:items-end lg:justify-between md:mx-auto'>
