@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
 .font-playfair {
-    font-family: 'Playfair Display', serif;
-  }
+  font-family: 'Playfair Display', serif;
+}
+
+.placeholder-gray{
+  color:#999999
+}

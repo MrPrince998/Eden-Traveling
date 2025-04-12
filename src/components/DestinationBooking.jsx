@@ -8,7 +8,7 @@ const DestinationBooking = () => {
         <form className='mx-5 min-w-[310px] md:flex flex-wrap justify-between items-center md:gap-5 md:mx-auto'>
             <div className='mb-4'>
                 <label className='font-sans block'>Search Destination*</label>
-                <input type="text" placeholder='Enter Destination' className='bg-white rounded-lg py-1 px-3 placeholder-[#999999] min-w-[310px] w-full'/>
+                <input type="text" placeholder='Enter Destination' className='bg-white rounded-lg py-1 px-3 placeholder-[#999999] min-w-[310px] w-full text-black'/>
             </div>
             <div className='mb-4'>
                 <label className='font-sans block'>Pax Number*</label>
