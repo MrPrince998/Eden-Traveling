@@ -2,7 +2,7 @@
   "name": "navbar",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://MrPrince998.github.io/Eden-Traveling",
+  "homepage": "https://github.com/MrPrince998/Eden-Traveling",
   "type": "module",
   "scripts": {
     "dev": "vite",

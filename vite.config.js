@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    host: true
+    host: true,
   },
-  base: '/Eden-Traveling/',
+  base: "/Eden-Traveling/", // This is the crucial part for GitHub Pages
 })
