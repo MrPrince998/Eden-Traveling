@@ -13,7 +13,7 @@ const Testimonial = () => {
         const sliderRef = useRef(null);
         
         const handleTransitionEnd = () => {
-            if (currentSlide === totalSlides) {
+            if (currentClient === totalSlides) {
                 setIsTransitioning(false);  
                 setCurrentClient(0);         
             }
@@ -82,6 +82,9 @@ const Testimonial = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     },[])
+
+    
+    const totalSlides = client.length;
 
     const goToSlide = (index) => {
         setCurrentClient(index);
