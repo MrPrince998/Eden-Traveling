@@ -70,18 +70,25 @@ const Testimonial = () => {
     ]
 
     useEffect(() => {
-        goToSlide((currentClient + 1) % client.length)
-    },[])
+        const interval = setInterval(() => {
+            setCurrentClient((prev) => {
+                return (prev + slidesPerView) % client.length;
+            });
+        }, slidesPerView === 1 ? 3000 : 6000);
+    
+        return () => clearInterval(interval);
+    }, [slidesPerView, client.length]);
+    
 
-    useEffect(()=>{
-        const handleResize = () => {
-            const mobile = window.innerWidth < 768;
-            setSlidesPerView(mobile ? 1 : 2);
-            setCurrentClient(0);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    },[])
+        useEffect(()=>{
+            const handleResize = () => {
+                const mobile = window.innerWidth < 768;
+                setSlidesPerView(mobile ? 1 : 2);
+                setCurrentClient(0);
+            };
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        },[])
 
     
     const totalSlides = client.length;
