@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import edenLogo from '../assets/images/Vector.png'
 import { useEffect, useState } from "react";
 
-const NavBar = () => {
+const NavBar = ({textColor, navColor}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -18,16 +18,18 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`sticky top-0 w-full text-white z-50 px-4 py-2 md:px-6 lg:px-24 transition-all duration-300 ease-in-out ${
+      className={`sticky top-0 w-full ${textColor} absolute z-50 px-4 py-2 md:px-6 lg:px-24 transition-all duration-300 ease-in-out ${
         scrolled ? "bg-white/0 backdrop-blur-sm py-1 shadow-md" : ""
       }`}
     >
 
       <div className="flex justify-between items-center h-12 md:px-10 ">
-        <div className='flex justify-center items-center h-[21px] md:h-[37px]'>
-            <img src={edenLogo} alt="EdenTravel" className="w-[21px] aspect-square md:w-[38px] transition-all duration-500 ease-in-out"/>
-            <h1 className='text-[#17C3B2] font-sans font-medium text-[20px] md:text-[37px] md:font-bold'>Eden<span className='text-white'>Travel</span></h1>
-        </div>
+        <Link to={'/home'}>
+          <div className='flex justify-center items-center h-[21px] md:h-[37px]'>
+                <img src={edenLogo} alt="EdenTravel" className="w-[21px] aspect-square md:w-[38px] transition-all duration-500 ease-in-out"/>
+                <h1 className='text-[#17C3B2] font-sans font-medium text-[20px] md:text-[37px] md:font-bold'>Eden<span className={`${textColor}`}>Travel</span></h1>
+          </div>
+        </Link>
         {/* Hamburger icon (visible on mobile) */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -39,7 +41,7 @@ const NavBar = () => {
         {/* Nav items (hidden on mobile, shown on md+) */}
         <ul className="hidden md:flex gap-10 font-medium md:text-lg">
           {NavItem.map((items) => (
-            <li key={items.id} className="hover:text-orange-500">
+            <li key={items.id} className="hover:text-[#17C3B2]">
               <Link to={items.to} className="flex gap-2 items-center">
                 {items.title}
               </Link>
@@ -54,7 +56,7 @@ const NavBar = () => {
             <li key={items.id} className="hover:text-orange-500">
               <Link
                 to={items.to}
-                className="flex gap-2 items-center"
+                className={`flex gap-2 items-center ${navColor}`}
                 onClick={() => setMenuOpen(false)}
               >
                 {items.title}

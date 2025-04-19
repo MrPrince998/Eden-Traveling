@@ -66,10 +66,12 @@ const Footer = () => {
         </div>
         <div className='flex justify-between md:border-t-1 border-[rgba(221,221,221,1)] md:pt-[30px]'>
             <p className='letter-blue hidden md:block w-full'>Copyright © 2023 Kunturi Design</p>
-            <div className='flex justify-center w-full items-center h-[21px] md:h-[37px] md:justify-end'>
-                <img src={edenLogo} alt="EdenTravel" className="w-[21px] aspect-square md:w-[38px] transition-all duration-500 ease-in-out"/>
-                <h1 className='text-[#17C3B2] font-sans font-medium text-[20px] md:text-[37px] md:font-bold'>Eden<span className='text-white md:text-black'>Travel</span></h1>
-            </div>
+            <Link to={'/home'}>
+                <div className='flex justify-center w-full items-center h-[21px] md:h-[37px] md:justify-end'>
+                    <img src={edenLogo} alt="EdenTravel" className="w-[21px] aspect-square md:w-[38px] transition-all duration-500 ease-in-out"/>
+                    <h1 className='text-[#17C3B2] font-sans font-medium text-[20px] md:text-[37px] md:font-bold'>Eden<span className='text-white md:text-black'>Travel</span></h1>
+                </div>
+            </Link>
         </div>
     </footer>
   )
