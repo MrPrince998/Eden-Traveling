@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { NavItem } from "./NavItem";
+import { NavItem } from "../data/NavItem";
 import { Menu, X } from "lucide-react";
-import edenLogo from '../assets/images/Vector.png'
+import edenLogo from "../assets/images/Vector.png";
 import { useEffect, useState } from "react";
 
-const NavBar = ({textColor, navColor}) => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+const NavBar = ({ textColor, navColor }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +22,17 @@ const NavBar = ({textColor, navColor}) => {
         scrolled ? "bg-white/0 backdrop-blur-sm py-1 shadow-md" : ""
       }`}
     >
-
       <div className="flex justify-between items-center h-12 md:px-10 ">
-        <Link to={'/home'}>
-          <div className='flex justify-center items-center h-[21px] md:h-[37px]'>
-                <img src={edenLogo} alt="EdenTravel" className="w-[21px] aspect-square md:w-[38px] transition-all duration-500 ease-in-out"/>
-                <h1 className='text-[#17C3B2] font-sans font-medium text-[20px] md:text-[37px] md:font-bold'>Eden<span className={`${textColor}`}>Travel</span></h1>
+        <Link to={"/home"}>
+          <div className="flex justify-center items-center h-[21px] md:h-[37px]">
+            <img
+              src={edenLogo}
+              alt="EdenTravel"
+              className="w-[21px] aspect-square md:w-[38px] transition-all duration-500 ease-in-out"
+            />
+            <h1 className="text-[#17C3B2] font-sans font-medium text-[20px] md:text-[37px] md:font-bold">
+              Eden<span className={`${textColor}`}>Travel</span>
+            </h1>
           </div>
         </Link>
         {/* Hamburger icon (visible on mobile) */}
@@ -51,19 +56,23 @@ const NavBar = ({textColor, navColor}) => {
       </div>
 
       {/* Mobile menu dropdown */}
-      <ul className={`absolute left-0 flex flex-col w-full gap-4 px-4 pb-4 md:hidden font-medium bg-[rgba(0,0,0,0.7)] backdrop-blur-md shadow-lg rounded-md transition-[max-height, opacity] duration-300 ease-in-out overflow-hidden ${menuOpen ? 'max-h-96 opacity-100 py-4' : 'max-h-0 opacity-0 py-0'}`}>     
-          {NavItem.map((items) => (
-            <li key={items.id} className="hover:text-orange-500">
-              <Link
-                to={items.to}
-                className={`flex gap-2 items-center ${navColor}`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {items.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <ul
+        className={`absolute left-0 flex flex-col w-full gap-4 px-4 pb-4 md:hidden font-medium bg-[rgba(0,0,0,0.7)] backdrop-blur-md shadow-lg rounded-md transition-[max-height, opacity] duration-300 ease-in-out overflow-hidden ${
+          menuOpen ? "max-h-96 opacity-100 py-4" : "max-h-0 opacity-0 py-0"
+        }`}
+      >
+        {NavItem.map((items) => (
+          <li key={items.id} className="hover:text-orange-500">
+            <Link
+              to={items.to}
+              className={`flex gap-2 items-center ${navColor}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {items.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };
